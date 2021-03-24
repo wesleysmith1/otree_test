@@ -1,0 +1,62 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Task 2
+{% endblock %}
+
+{% block content %}
+
+    <div>
+        <p>
+            Your task is to estimate the contents in the envelopes. 
+            An envelope from people who left more than $6 are classified as “generous,” and an envelope from people who left less than $6 are classified as “self-interested.
+        </p>
+        
+        <ol>
+            <li>
+                You will use given information to formulate accurate guesses about the content from the envelopes.  You will guess whether the envelope is a “generous” envelope (with more than $6) or a “self-interested” envelope (with less than $6.) 
+            </li>
+            <li>
+                Your payoff is strictly tied to the accuracy of your guesses. Example (a): The envelope contains $5. If you selected “generous,” you receive 0 points. If you selected “self-interested” you receive 5 points.  Example (b): The envelope contains 7 points. If you selected “generous,” you receive 7 points.  If you selected “self-interested,” you receive 0 points.
+            </li>
+            <li>
+                Your final payoff will be determined from your answer to one randomly drawn decision.
+            </li>
+        </ol>
+
+        <p>
+            22 independent raters have evaluated the pictures of those who allocated the dollar bills and the paper slips in the envelopes in the previous experiment. 
+            These participants and their envelopes are put into four groups according to the raters’ evaluations of their facial attractiveness and their gender. 
+            Participants whose ratings were above the average rating are put in the “attractive group,” and participants whose rating ere below the average are put in the “unattractive group.” You will be presented with four envelopes whose contents represent the average allocations of each of the four groups.
+        </p>
+    </div>
+
+    <p>
+        Recall that each of the envelopes you are evaluating contains the average contents of the envelopes of participants from the past experiment evaluated as having the facial attractiveness and gender indicated.
+    </p>
+
+    {% for q in questions %}
+        <div class="form-group required">
+
+            <label class="col-form-label">
+                {{q.label}}
+            </label>
+            <div class="controls field-beauty1">
+                <ul>
+                    {% for c in q.choices %}
+                        <li>
+                            <label for="{{q.name}}{{c.0}}">
+                                <input type="radio" name="{{q.name}}" value={{c.0}} required="" id="{{q.name}}{{c.0}}" class="form-check-input">
+                                {{c.1}}
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% next_button %}
+
+{% endblock %}

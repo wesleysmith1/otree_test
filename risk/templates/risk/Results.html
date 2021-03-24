@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block styles %}
+
+	<style>
+	#risk table, #risk th, #risk td, #risk tr {
+		border: 1px solid black; 
+		padding: 10px;
+		text-align: center;
+	}
+	
+	#risk tr:nth-child(even){background-color: #f2f2f2;}
+	
+	</style>
+
+{% endblock %}
+
+{% block title %}
+    Task 1 Result
+{% endblock %}
+
+{% block content %}
+	<h5>
+        You chose lottery {{player.risk_choice}}. <br><br>
+		
+		When the computer fliped the coin the outcome was <b>{{outcome}}</b> and you earned <b>{{player.risk_payment}}</b>.
+        
+        
+    </h5>
+    <br>
+    
+    {% include "global/Payoffs.html" %}
+    
+    <br>
+	{% next_button %}
+
+{% endblock %}

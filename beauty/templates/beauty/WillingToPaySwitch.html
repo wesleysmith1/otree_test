@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Task 2
+{% endblock %}
+
+{% block content %}
+
+    <div>
+        <p>
+            You were selected to receive payment from the {{selected_group}}’s group envelope. 
+            Would you like to switch to the envelope coming from the {{switch_group}}’s group envelope instead? 
+            If so, what is the maximum number of points you are willing to pay to switch to the {{switch_group}}’s group envelope.    
+        </p>
+        <p>
+            Before this survey, a fee of X points was RANDOMLY generated from between 0 and 5 points in increments of 0.25 points. 
+            If the maximum amount you report is greater than X points, the randomly selected fee of X points will be deducted from your final payment, 
+            and you will receive the contents of the other envelope instead of the original envelope. 
+            This decision and outcome will only be used, and results occur if you correctly guessed the contents of the original {{selected_group}}’s group envelope.
+        </p>
+    </div>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

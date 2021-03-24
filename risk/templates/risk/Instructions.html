@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block styles %}
+
+	<style>
+	#risk table, #risk th, #risk td, #risk tr {
+		border: 1px solid black; 
+		padding: 10px;
+		text-align: center;
+	}
+	
+	#risk tr:nth-child(even){background-color: #f2f2f2;}
+	
+	</style>
+
+{% endblock %}
+
+{% block title %}
+    Instructions for task 1
+{% endblock %}
+
+{% block content %}
+
+    For Task 1 you will select from among six different lotteries the one lottery
+    you would like to play. The six different lotteries are listed below.
+
+    You must select one and only one of these lotteries.
+
+    Notice that each lottery has two possible outcomes, one for HEADS and one for TAILS. 
+    After you have selected the lottery you wish to play the computer will flip a virtual coin. 
+    The probability that the coin flip will be HEADS is 50%. 
+    The probability that the coin flip will be TAILS is 50%. 
+    Your payoff for this part of the experiment will be determined by:
+
+    <ul>
+        <li>which of the six lotteries you select; and</li>
+        <li>which of the two possible payoffs occur.</li>
+    </ul>
+    
+    For example, if you select lottery 4 and the outcome of the coin flip is HEADS, you will be paid {{option4A}}.
+    If the outcome of the coin flip is TAILS, you will paid {{option4B}}.
+
+    <br>
+    <br>
+    {% include "global/Payoffs.html" %}
+    <br>
+    {% next_button %}
+{% endblock %}

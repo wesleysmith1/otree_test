@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block styles %}
+
+	<style>
+	#risk table, #risk th, #risk td, #risk tr {
+		border: 1px solid black; 
+		padding: 10px;
+		text-align: center;
+	}
+	
+	#risk tr:nth-child(even){background-color: #f2f2f2;}
+	
+	</style>
+
+{% endblock %}
+
+{% block title %}
+    Task 1 Decision
+{% endblock %}
+
+{% block content %}
+	<p>
+		Before flipping the coin to determine the outcome of the lottery you choose, the computer flipped the coin two times.
+		
+		<ul style="font-size: 24px;">
+			<li>
+				The first time the computer flipped the coin it was: <b>{{flips.0}}</b>. 
+			</li>
+			<li>
+				The second time the computer fliped the coin it was <b>{{flips.1}}</b>.
+			</li>
+		</ul>
+
+		The outcome of any coin flip does not affect the outcome of another coin flip.
+	</p>
+		
+	{% include "global/Payoffs.html" %}
+	
+	<br>
+	<p>
+        Please select the lottery you would like to play. 
+		After you have selected a lottery the computer will flip the coin to determine the outcome.
+	</p>
+	
+	<b>{% formfield player.risk_choice label="Lottery Number:" %} </b>
+	
+	<br>
+    {% next_button %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Consent Form
+{% endblock %}
+
+{% block content %}
+
+    <iframe src="{% static 'global/consent.pdf' %}" height="1000px;" width="100%"></iframe>
+
+    <form action="/">
+        <button id="agree" class="btn btn-primary" type="button">I consent and agree to take part in the study</button>
+        <button id="disagree" class="btn btn-primary" type="button">Opt out</button>
+    </form>
+
+    <button id="submit" type="submit" class="btn btn-primary" style="display: none;">Next</button>
+
+    <script>
+        $( document ).ready(function() {
+            $("#agree").click(function(){
+                $('#submit').click()
+            }); 
+
+            $("#disagree").click(function(){
+                let x = confirm("Are you sure you would like to exit the survey?");
+                if (x)
+                    window.location.replace("https://app.prolific.co/submissions/complete?cc=6186F4BF");
+            }); 
+        });
+    </script>
+
+{% endblock %}

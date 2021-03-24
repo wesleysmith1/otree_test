@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Thank you for participating today.  The experimental session will last approximately 30 minutes. 
+        This research is voluntary, you are free to opt out at any point.  At the end of the session, each of you will receive 
+        a $2.50 participation and completion bonus that will be added to your experimental earnings. 
+        Experimental earnings are determined by the choices you make during the research session. 
+        Experimental earnings will be denominated in points. Each point is worth $0.10. 
+    </p>
+    <p>
+        Please read the instructions carefully.
+    </p>
+    <p>
+        Your anonymity is assured as we will not reveal any information about your 
+        choices or your identity to other participants (or anyone else) before or after the research session.
+    </p>
+    <p>
+        There are some very important rules that you must follow during the experiment. 
+        Primarily, we ask that you give your complete attention to the exercises and questions in this experiment by minimizing distractions.
+    </p>
+    <ol>
+        <li>Please complete this experiment on your own and without the assistance from others.</li>
+        <li>Please find a quiet place where you can partcipate in the experiment without distraction and talking with others.</li>
+        <li>Silence your cell phone and any other electronic device that may distract you while you participate in this experiment. </li>
+        <li>Please do not step away from the experiment. Plan on participating until the experiment concludes.</li>
+    </ol>
+
+    <p>
+        You will particpate in two Tasks in this experiment. When you are ready, press Next to begin the experiment. 
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

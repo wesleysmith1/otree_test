@@ -3,6 +3,11 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
+        name='test',
+        app_sequence=['welcome', 'risk', 'beauty', 'survey'],
+        num_demo_participants=1,
+    ),
+    dict(
         name='public_goods',
         app_sequence=['public_goods', 'payment_info'],
         num_demo_participants=3,
